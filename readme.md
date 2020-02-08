@@ -1,6 +1,6 @@
 # Hanna, Open Source Personal Assistant
 
-Works in Progress**
+**Works in Progress**
 
 ## Goal
 

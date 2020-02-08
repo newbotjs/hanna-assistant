@@ -2,7 +2,7 @@ import Chat from './MainContainer.vue'
 import storeObj from '../../store'
 import bus from '../../bus'
 
-import '../../assets/theme.css'
+import '../../../theme/styles/prebuilt/default.scss'
 import 'perfect-scrollbar/css/perfect-scrollbar.css'
 
 const Chatbox = {
