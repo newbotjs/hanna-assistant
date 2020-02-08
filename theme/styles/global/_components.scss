@@ -1,0 +1,74 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+
+@import '../../components/layout.component.theme';
+@import '../../components/sidebar.component.theme';
+@import '../../components/calendar.component.theme';
+@import '../../components/card/card.component.theme';
+@import '../../components/card/flip-card.component.theme';
+@import '../../components/card/reveal-card.component.theme';
+@import '../../components/tabset.component.theme';
+@import '../../components/route-tabset.component.theme';
+@import '../../components/menu.component.theme';
+@import '../../components/user.component.theme';
+@import '../../components/actions.component.theme';
+@import '../../components/checkbox.component.theme';
+@import '../../components/toggle.component.theme';
+@import '../../components/progress-bar.component.theme';
+@import '../../components/badge.component.theme';
+@import '../../components/alert.component.theme';
+@import '../../components/chat.component.theme';
+@import '../../components/spinner.component.theme';
+@import '../../components/stepper.component.theme';
+@import '../../components/accordion.component.theme';
+@import '../../components/button/button.component.theme';
+@import '../../components/input/input.directive.theme';
+@import '../../components/popover.component.theme';
+@import '../../components/context-menu.component.theme';
+@import '../../components/select/select.component.theme';
+@import '../../components/option-list.component.theme';
+@import '../../components/toast.component.theme';
+@import '../../components/tooltip.component.theme';
+@import '../../components/datepicker-container.component.theme';
+@import '../../components/radio.component.theme';
+@import '../../components/tree-grid/tree-grid.component.theme';
+@import '../../components/icon.component.theme';
+
+@mixin nb-theme-components() {
+
+  @include nb-layout-theme();
+  @include nb-sidebar-theme();
+  @include nb-calendar-theme();
+  @include nb-card-theme();
+  @include nd-reveal-card-theme();
+  @include nd-flip-card-theme();
+  @include nb-tabset-theme();
+  @include nb-route-tabset-theme();
+  @include nb-menu-theme();
+  @include nb-user-theme();
+  @include nb-actions-theme();
+  @include nb-spinner-theme();
+  @include nb-checkbox-theme();
+  @include nb-toggle-theme();
+  @include nb-progress-bar-theme();
+  @include nb-badge-theme();
+  @include nb-stepper-theme();
+  @include nb-alert-theme();
+  @include nb-chat-theme();
+  @include nb-accordion-theme();
+  @include nb-buttons-theme();
+  @include nb-input-theme();
+  @include nb-popover-theme();
+  @include nb-context-menu-theme();
+  @include nb-select-theme();
+  @include nb-option-list-theme();
+  @include nb-toast-theme();
+  @include nb-tooltip-theme();
+  @include nb-datepicker-theme();
+  @include nb-radio-theme();
+  @include nb-tree-grid-theme();
+  @include nb-icon-theme();
+}

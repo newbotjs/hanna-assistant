@@ -1,0 +1,164 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+ 
+
+@mixin nb-tabset-theme() {
+
+  .nb-tabset {
+
+    display: block;
+
+
+  &.full-width .tabset {
+    justify-content: space-around;
+  }
+
+  ::ng-deep nb-tab {
+    flex: 1;
+    -ms-flex: 1 1 auto;
+    overflow: auto;
+    display: none;
+    &.content-active {
+      display: block;
+    }
+  }
+
+  .tabset {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    .tab {
+      margin-bottom: -1px;
+      text-align: center;
+      position: relative;
+
+      &.active a::before {
+        display: block;
+      }
+
+      a {
+        display: flex;
+        position: relative;
+        text-decoration: none;
+
+        &::before {
+          position: absolute;
+          content: '';
+          width: 100%;
+          border-radius: 3px;
+          bottom: -2px;
+          left: 0;
+        }
+
+        nb-icon {
+          vertical-align: middle;
+        }
+
+        nb-icon + span {
+          @include nb-ltr(margin-left, 0.5rem);
+          @include nb-rtl(margin-right, 0.5rem);
+        }
+      }
+    }
+  }
+
+    background-color: nb-theme(tabset-background-color);
+    border-radius: nb-theme(tabset-border-radius);
+    box-shadow: nb-theme(tabset-shadow);
+
+    .tabset {
+      border-bottom: nb-theme(tabset-divider-width) nb-theme(tabset-divider-style) nb-theme(tabset-divider-color);
+    }
+
+    .tab-link {
+      background-color: nb-theme(tabset-tab-background-color);
+      cursor: pointer;
+      padding: nb-theme(tabset-tab-padding);
+      color: nb-theme(tabset-tab-text-color);
+      font-family: nb-theme(tabset-tab-text-font-family);
+      font-size: nb-theme(tabset-tab-text-font-size);
+      font-weight: nb-theme(tabset-tab-text-font-weight);
+      line-height: nb-theme(tabset-tab-text-line-height);
+      text-transform: nb-theme(tabset-tab-text-transform);
+
+      &::before {
+        background-color: nb-theme(tabset-tab-underline-color);
+        height: nb-theme(tabset-tab-underline-width);
+      }
+    }
+
+    .tab.active {
+      .tab-link {
+        background-color: nb-theme(tabset-tab-active-background-color);
+        color: nb-theme(tabset-tab-active-text-color);
+        &::before {
+          background-color: nb-theme(tabset-tab-active-underline-color);
+        }
+      }
+    }
+
+    .tab:focus {
+      .tab-link {
+        background-color: nb-theme(tabset-tab-focus-background-color);
+        color: nb-theme(tabset-tab-focus-text-color);
+        &::before {
+          background-color: nb-theme(tabset-tab-focus-underline-color);
+        }
+      }
+    }
+
+    .tab:hover {
+      .tab-link {
+        color: nb-theme(tabset-tab-hover-text-color);
+        background-color: nb-theme(tabset-tab-hover-background-color);
+        &::before {
+          background-color: nb-theme(tabset-tab-hover-underline-color);
+        }
+      }
+    }
+
+    .tab.disabled {
+      cursor: default;
+      pointer-events: none;
+
+      .tab-link {
+        background-color: nb-theme(tabset-tab-disabled-background-color);
+        color: nb-theme(tabset-tab-disabled-text-color);
+        cursor: default;
+        pointer-events: none;
+        &::before {
+          background-color: nb-theme(tabset-tab-disabled-underline-color);
+        }
+      }
+    }
+
+    .tab.responsive {
+      @media screen and (max-width: nb-theme(tabset-tab-text-hide-breakpoint)) {
+        .tab-text {
+          display: none;
+        }
+      }
+    }
+
+    .nb-tab {
+      background-color: nb-theme(tabset-content-background-color);
+      color: nb-theme(tabset-content-text-color);
+      font-family: nb-theme(tabset-content-text-font-family);
+      font-size: nb-theme(tabset-content-text-font-size);
+      font-weight: nb-theme(tabset-content-text-font-weight);
+      line-height: nb-theme(tabset-content-text-line-height);
+      padding: nb-theme(tabset-content-padding);
+
+      @include nb-scrollbars(
+          nb-theme(tabset-scrollbar-color),
+          nb-theme(tabset-scrollbar-background-color),
+          nb-theme(tabset-scrollbar-width));
+    }
+  }
+}
