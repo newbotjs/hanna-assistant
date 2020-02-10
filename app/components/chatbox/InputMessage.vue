@@ -1,9 +1,9 @@
 <template>
   <div class="form nb-chat-form">
     <div class="message-row">
-      <Input :fullWidth="true" v-model="message" @keyup.enter="send" />
-      <Button @click="send">
-        <Icon name="paper-plane-outline" />
+      <Input :fullWidth="true" v-model="message" @keyup.enter="send" class="with-button" status="basic" placeholder="Type a message" />
+      <Button @click="send" class="send-button">
+        <Icon name="paper-plane-outline" height="16px" width="16px" />
       </Button>
     </div>
   </div>

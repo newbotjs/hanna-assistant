@@ -12,32 +12,13 @@
 
 <script>
 import Button from "../Button";
-import { Plugins } from "@capacitor/core";
-
-const { Geolocation } = Plugins;
+import mixinButton from './mixins/mixinButton'
 
 export default {
   props: ["data"],
+  mixins: [mixinButton],
   components: {
     Button
-  },
-  methods: {
-    async click(btn) {
-      if (btn.url) {
-        window.open(btn.url, "_blank");
-      } else if (btn.postback) {
-        this.$store.commit("addUserMessage", btn.postback);
-      } else if (btn.phone_number) {
-        window.open(`tel:${btn.phone_number}`);
-      } else if (btn.location) {
-        const { coords } = await Geolocation.getCurrentPosition();
-        this.$bus.$emit("send", {
-          geo: coords
-        });
-      } else {
-        this.$store.commit("addUserMessage", btn.title);
-      }
-    }
   }
 };
 </script>

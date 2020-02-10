@@ -20,7 +20,7 @@
             :data="obj.data"
             :isLastMessage="index == length -1"
           />
-          <QuickReplies :data="obj.actions" v-if="displayActions(obj, index)" />
+          <QuickReplies :data="obj.data.actions" v-if="displayActions(obj.data, index)" />
         </div>
       </div>
     </div>

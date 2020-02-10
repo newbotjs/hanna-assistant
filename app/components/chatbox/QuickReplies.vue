@@ -2,7 +2,7 @@
   <div >
       <transition name="actions" mode="out-in">
         <div class="nb-actions">
-            <Button v-for="content in data" :key="content" v-stagger status="primary" appearance="outline" shape="round" size="small">{{ content }}</Button>
+            <Button v-for="content in data" :key="content" v-stagger status="primary" appearance="outline" shape="round" size="small" @click="click(content)">{{ content }}</Button>
         </div>
       </transition>
   </div>
@@ -11,9 +11,11 @@
 <script>
 import Button from '../Button'
 import stagger from './directives/stagger'
+import mixinButton from './mixins/mixinButton'
 
 export default {
     props: ['data'],
+    mixins: [mixinButton],
     components: {
         Button
     },
