@@ -9,7 +9,7 @@
       >
         <div
           class="avatar"
-          style="background-image: url('https://i.gifer.com/no.gif');"
+          :style="urlAvatar"
           v-if="!obj.isUser"
         ></div>
         <div class="message">
@@ -40,6 +40,7 @@ import Carousel from "./Carousel.vue";
 import { mapGetters } from "vuex";
 
 export default {
+  props: ['avatar'],
   components: {
     Message,
     InputMessage,
@@ -88,7 +89,13 @@ export default {
     });
   },
   computed: {
-    ...mapGetters(["messages", "length"])
+    ...mapGetters(["messages", "length"]),
+    urlAvatar() {
+      if (!this.avatar) return {}
+      return {
+        'background-image': `url(${this.avatar})`
+      }
+    }
   },
   methods: {
     send() {
